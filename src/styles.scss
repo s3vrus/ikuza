@@ -30,8 +30,10 @@ html, body {
   margin: 0 auto;
   position: relative;
   width: auto;
+  padding: 0 2rem;
   @media (min-width: 1024px) {
     max-width: 960px;
+    padding: 0;
   }
   @media (min-width: 1216px) {
     max-width: 1152px;
@@ -54,16 +56,46 @@ h1 {
   font-weight: 900;
   font-size: 3.75rem;
   margin: 0;
+  @media (max-width: 1540px){
+    font-size: 2.75rem;
+  }
+  @media (max-width: 680px) {
+    font-size: 2.25rem;
+  }
+  @media (max-width: 516px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 390px){
+    font-size: 1.4rem;
+  }
 }
 h2 {
   font-weight: 900;
   font-size: 2.75rem;
   margin: 0;
+  @media (max-width: 1540px){
+    font-size: 1.75rem;
+  }
+  @media (max-width: 680px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 516px) {
+    font-size: 1rem;
+  }
 }
 h3 {
   font-weight: 200;
   font-size: 1.75rem;
   margin: 0;
+  @media (max-width: 1540px){
+    font-size: 1rem;
+  }
+  @media (max-width: 680px) {
+    font-size: 0.75rem;
+  }
+  @media (max-width: 680px) {
+    font-size: .6rem;
+  }
 }
 
 p {
@@ -144,6 +176,12 @@ p {
   &:hover{
     background-color: $black-40;
   }
+  @media (max-width: 516px) {
+    margin: 0 5px;
+  }
+  @media (max-width: 390px){
+    padding: 0;
+  }
 }
 
 
@@ -153,24 +191,26 @@ p {
 
 
 .page-footer {
-  height: 8rem;
+  height: fit-content;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // flex-direction: column;
-  background: $blue;
-  color: $white;
-  @media (max-width: 680px) {
-    font-size: 0.75rem;
+  text-align: center;
+  align-items: flex-end;
+  img{
+    position: absolute;
+    @media (max-width: 1024px) {
+      visibility: hidden;
+    }
+    @media (max-width: 680px) {
+      font-size: 0.75rem;
+    }
+  }
+  div {
+    padding-bottom: 2rem;
+    @media (max-width: 680px) {
+      font-size: 0.75rem;
+    }
   }
 }
-.footer-left {
-  text-align: left;
-}
-.footer-right {
-  text-align: right;
-}
-
 
   
 // ---------------
@@ -183,6 +223,9 @@ p {
   align-items: flex-start;
   height: 90vh;
   flex-direction: column;
+  @media (max-width: 1216px) {
+    align-items: center;
+  }
 }
 #about {
   display: flex;
@@ -216,6 +259,9 @@ p {
   position: absolute;
   bottom: 0;
   right: 0;
+  @media (max-width: 1216px) {
+    visibility: hidden;
+  }
 }
 
 .mint-box {
@@ -230,13 +276,40 @@ p {
   right: 0;
   border: solid $blue 2px;
   border-radius: 0.5rem;
-  padding: 2rem
+  padding: 2rem;
+  @media (max-width: 1540px){
+    width: 543px;
+    height: 15rem;
+    padding: 1.5rem;
+  }
+  @media (max-width: 680px) {
+    width: 444px;
+    height: 13rem;
+    padding: 1rem;
+  }
+  @media (max-width: 516px) {
+    width: 296px;
+    height: 10rem;
+    padding: 0.5rem;
+  }
 }
 .mint-item {
   min-width: 250px;
   margin: 0 20px;
   padding: 30px;
   text-align: center;
+  @media (max-width: 1540px){
+    min-width: 175px;
+    padding: 20px;
+  }
+  @media (max-width: 680px) {
+    min-width: 150px;
+    padding: 10px;
+  }
+  @media (max-width: 516px) {
+    min-width: 80px;
+    padding: 5px;
+  }
 } 
 .mint-button {
   cursor: pointer;
@@ -255,15 +328,34 @@ p {
     background-color: $blue;
     color: $black;
   }
+  @media (max-width: 1540px){
+    font-size: 1rem;
+  }
+  @media (max-width: 680px) {
+    font-size: 0.75rem;
+    padding: .75rem 1.25rem;
+  }
+  @media (max-width: 516px) {
+    font-size: .6rem;
+  }
 }
 
 .spacer {
   height: 13rem;
+  @media (max-width: 1540px){
+    height: 9rem;
+  }
+  @media (max-width: 1216px) {
+    height: 6rem;
+  }
 }
 
 .center {
   text-align: center;
   width: 600px;
+  @media (max-width: 680px) {
+    width: fit-content;
+  }
 }
 
 .r-header {
@@ -271,6 +363,12 @@ p {
   width: 100%;
   text-align: center;
   padding: 13rem;
+  @media (max-width: 1540px){
+    padding: 9rem;
+  }
+  @media (max-width: 1216px) {
+    padding: 6rem;
+  }
 }
 
 .roadmap-line {
@@ -283,6 +381,12 @@ p {
   width: 2rem;
   background: rgb(245,245,245);
   background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(63,202,191,1) 5%, rgba(63,202,191,1) 95%, rgba(245,245,245,1) 100%);
+  @media (max-width: 868px) {
+    right: 100%;
+  }
+  @media (max-width: 516px) {
+    visibility: hidden;
+  }
 }
 
 .roadmap-row {
@@ -291,6 +395,15 @@ p {
   width: 70vw;
   &:nth-child(2n) {
     justify-content: flex-start;
+    @media (max-width: 868px) {
+      justify-content: center;;
+    }
+  }
+  @media (max-width: 1540px){
+    width: 80vw;
+  }
+  @media (max-width: 868px) {
+    justify-content: center;;
   }
 }
 
@@ -302,10 +415,27 @@ p {
   border-radius: .5rem;
   h2{
     font-size: 1.75rem;
+    @media (max-width: 680px) {
+      font-size: 1.5rem;
+    }
   }
   &:hover {
     background-color: $blue-20;
   }
+  @media (max-width: 1540px){
+    width: 26.6vw;
+  }
+  @media (max-width: 1216px) {
+    width: 35vw;
+  }
+  @media (max-width: 868px) {
+    width: 75%;
+  }
+  @media (max-width: 516px) {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
 }
 .roadmap-completed {
   width: 23.3vw;
@@ -314,12 +444,28 @@ p {
   align-items: center;
   z-index: 3;
   font-size: 3.5rem;
+  @media (max-width: 1540px){
+    width: 26.6vw;
+  }
+  @media (max-width: 1216px) {
+    width: 10vw;
+  }
+  @media (max-width: 868px) {
+    visibility: hidden;
+    width: 0;
+  }
 }
 
 .team-row {
   display: flex;
   justify-content: flex-end;
   width: 70vw;
+  @media (max-width: 1540px){
+    width: 80vw;
+  }
+  @media (max-width: 1216px){
+    flex-direction: column;
+  }
 }
 
 .team-item {
@@ -330,22 +476,52 @@ p {
   border-radius: .5rem;
   h2{
     font-size: 1.75rem;
-    margin: 0.5rem 0
+    margin: 0.5rem 0;
+    @media (max-width: 516px){
+      font-size: 1.5rem;
+    }
   }
   h3{
     font-size: 1.25rem;
-    margin: 0.5rem 0
+    margin: 0.5rem 0;
+    @media (max-width: 516px){
+      font-size: 1rem;
+    }
   }
   &:hover {
     background-color: $blue;
     color: black;
   }
-
+  @media (max-width: 1540px){
+    width: 23vw;
+    margin: 9rem auto;
+  }
+  @media (max-width: 1216px) {
+    margin: 1.5rem auto;
+    width: 349px;
+    &:first-child {
+      margin-top: 6rem;
+    }
+  }
+  @media (max-width: 516px){
+    width: 296px;
+  }
 }
 
 .team-img {
   width: 19vw;
   padding-right: 1rem;
+  @media (max-width: 1540px){
+    width: 22vw;
+  }
+  @media (max-width: 1216px){
+    width: 338px;
+    padding-right: 1.5rem;
+  }
+  @media (max-width: 516px){
+    width: 260px;
+    padding-right: 0;
+  }
 }
 
 .team-icon {
@@ -353,11 +529,5 @@ p {
 }
 
 
-.page-footer {
-  height: fit-content;
-  text-align: center;
-  background-color: $black;
-  img{
-    position: absolute;
-  }
-}
+
+
