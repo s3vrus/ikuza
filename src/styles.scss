@@ -143,6 +143,10 @@ p {
   height: 1.75rem;
   padding: .5rem;
   border-radius: .5rem;
+  a{
+    color: $black;
+    text-decoration: none;
+  }
 }
 
 .nav-links {
@@ -170,6 +174,9 @@ p {
   border-radius: .5rem;
   padding: .25rem .5rem;
   height: 2rem;
+  a{
+    color: $white;
+  }
   &:last-child {
     margin-right: 0px;
   }
@@ -210,6 +217,9 @@ p {
     @media (max-width: 680px) {
       font-size: 0.75rem;
     }
+  }
+  a {
+    color: $white;
   }
 }
 
