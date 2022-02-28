@@ -4,56 +4,71 @@ $blue: #3FCABF;
 $blue-20: #3FCABF33;
 $black: #0A0A0A;
 $black-20: #0A0A0A33;
+$black-40: #0A0A0A66;
 $white: #F5F5F5;
 $white-20: #F5F5F533;
 
+// Font
+
+$primary: Helvetica, Arial;
+$secondary: monospace;
+
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body {
-    font-family: Helvetica, Arial;
-    background-color: $black;
-    color: $white;
-    margin: 0;
+  font-family: Helvetica, Arial;
+  background-color: $black;
+  color: $white;
+  margin: 0;
 }
 
 .wrapper {
-    flex-grow: 1;
-    margin: 0 auto;
-    position: relative;
-    width: auto;
-    @media (min-width: 1024px) {
-        max-width: 960px;
-    }
-    @media (min-width: 1216px) {
-        max-width: 1152px;
-    }
-    @media (min-width: 1480px) {
-        max-width: 1244px;
-    }
-    @media (min-width: 1540px){
-        max-width: 1520px;
-    }
-    &.fluid {
-        padding: 0;
-        margin: 0;
-        max-width: 100% !important;
-    }
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  @media (min-width: 1024px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1216px) {
+    max-width: 1152px;
+  }
+  @media (min-width: 1480px) {
+    max-width: 1244px;
+  }
+  @media (min-width: 1540px){
+    max-width: 1520px;
+  }
+  &.fluid {
+    padding: 0;
+    margin: 0;
+    max-width: 100% !important;
+  }
 }
 
 
 h1 {
-    font-weight: 900;
-    margin: 0;
-}
-.large-heading {
+  font-weight: 900;
   font-size: 3.75rem;
+  margin: 0;
+}
+h2 {
+  font-weight: 900;
+  font-size: 2.75rem;
+  margin: 0;
+}
+h3 {
+  font-weight: 200;
+  font-size: 1.75rem;
+  margin: 0;
 }
 
 p {
   font-family: monospace;
+  font-size: 1rem;
 }
 
 
@@ -62,40 +77,40 @@ p {
 // ---------------
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-header {
-    height: 6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sticky {
-    max-width: 100vw;
-    height: 6rem;
-    top: 0px;
-    position: sticky;
-    z-index: 110;
-    transition: top 0.5s ease 0s;
-    background-color: transparent;
+  max-width: 100vw;
+  height: 6rem;
+  top: 0px;
+  position: sticky;
+  z-index: 110;
+  transition: top 0.5s ease 0s;
+  background-color: transparent;
 }
 
 .nav-logo {
-    display: flex;
-    align-items: center;
-    font-weight: 900;
-    text-decoration: none;
-    transition: .2s ease-in-out;
-    font-size: 1.25rem;
-    color: $black;
-    cursor: pointer;
-    background-color: $blue;
-    height: 1.75rem;
-    padding: .5rem;
-    border-radius: .5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  text-decoration: none;
+  transition: .2s ease-in-out;
+  font-size: 1.25rem;
+  color: $black;
+  cursor: pointer;
+  background-color: $blue;
+  height: 1.75rem;
+  padding: .5rem;
+  border-radius: .5rem;
 }
 
 .nav-links {
@@ -113,17 +128,21 @@ p {
 .nav-icons {
   margin: 0 20px;
   color: $white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   list-style: none;
   display: inline-block;
   text-decoration: none;
   transition: .1s ease-in-out;
   cursor: pointer;
+  background-color: $black-20;
+  border-radius: .5rem;
+  padding: .25rem .5rem;
+  height: 2rem;
   &:last-child {
     margin-right: 0px;
   }
   &:hover{
-    color: $white-20;
+    background-color: $black-40;
   }
 }
 
@@ -134,23 +153,23 @@ p {
 
 
 .page-footer {
-    height: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    // flex-direction: column;
-    background: $blue;
-    color: $white;
-    @media (max-width: 680px) {
-      font-size: 0.75rem;
-    }
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // flex-direction: column;
+  background: $blue;
+  color: $white;
+  @media (max-width: 680px) {
+    font-size: 0.75rem;
   }
-  .footer-left {
-    text-align: left;
-  }
-  .footer-right {
-    text-align: right;
-  }
+}
+.footer-left {
+  text-align: left;
+}
+.footer-right {
+  text-align: right;
+}
 
 
   
@@ -161,20 +180,184 @@ p {
 #mint {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 90vh;
   flex-direction: column;
 }
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  flex-direction: column;
+  background-color: $blue;
+  color: $black;
+}
+#roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: fit-content;
+  background-color: $white;
+  color: $black;
+}
+#team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  flex-direction: column;
+  background-color: $black;
+  color: $white;
+}
 
 .meep {
-  height: 90vh;
+  height: 85vh;
   position: absolute;
+  bottom: 0;
   right: 0;
 }
 
 .mint-box {
-  background-color: $blue;
-  width: 40vw;
-  color: $black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $black;
+  width: 741px;
+  height: 20rem;
+  color: $white;
   right: 0;
+  border: solid $blue 2px;
+  border-radius: 0.5rem;
+  padding: 2rem
+}
+.mint-item {
+  min-width: 250px;
+  margin: 0 20px;
+  padding: 30px;
+  text-align: center;
+} 
+.mint-button {
+  cursor: pointer;
+  background-color: $black;
+  border: solid $blue 2px;
+  border-radius: 0.5rem;
+  height: fit-content;
+  width: fit-content;
+  color: $white;
+  font-family: $primary;
+  font-weight: 400;
+  font-size: 1.25rem;
+  // transition: .1s ease-in-out;
+  padding: 1rem 2rem;
+  &:hover{
+    background-color: $blue;
+    color: $black;
+  }
+}
+
+.spacer {
+  height: 13rem;
+}
+
+.center {
+  text-align: center;
+  width: 600px;
+}
+
+.r-header {
+  background-color: $white;
+  width: 100%;
+  text-align: center;
+  padding: 13rem;
+}
+
+.roadmap-line {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 100%;
+  width: 2rem;
+  background: rgb(245,245,245);
+  background: linear-gradient(0deg, rgba(245,245,245,1) 0%, rgba(63,202,191,1) 5%, rgba(63,202,191,1) 95%, rgba(245,245,245,1) 100%);
+}
+
+.roadmap-row {
+  display: flex;
+  justify-content: flex-end;
+  width: 70vw;
+  &:nth-child(2n) {
+    justify-content: flex-start;
+  }
+}
+
+.roadmap-item {
+  width: 23.3vw;
+  margin: 6rem 0;
+  border: solid $blue 2px;
+  padding: .5rem;
+  border-radius: .5rem;
+  h2{
+    font-size: 1.75rem;
+  }
+  &:hover {
+    background-color: $blue-20;
+  }
+}
+.roadmap-completed {
+  width: 23.3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  font-size: 3.5rem;
+}
+
+.team-row {
+  display: flex;
+  justify-content: flex-end;
+  width: 70vw;
+}
+
+.team-item {
+  width: 20vw;
+  margin: 13rem auto;
+  border: solid $blue 2px;
+  padding: 1rem;
+  border-radius: .5rem;
+  h2{
+    font-size: 1.75rem;
+    margin: 0.5rem 0
+  }
+  h3{
+    font-size: 1.25rem;
+    margin: 0.5rem 0
+  }
+  &:hover {
+    background-color: $blue;
+    color: black;
+  }
+
+}
+
+.team-img {
+  width: 19vw;
+  padding-right: 1rem;
+}
+
+.team-icon {
+  font-size: 2rem;
+}
+
+
+.page-footer {
+  height: fit-content;
+  text-align: center;
+  background-color: $black;
+  img{
+    position: absolute;
+  }
 }
